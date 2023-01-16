@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 
-function TodoForm({onSubmit}) {
+function TodoForm({ edit, onSubmit }) {
     // Las funciones que recibira por props seran: handleAddTaskToArray y updateTodo.
+    
+    const [input, setInput] = useState(edit ? edit.value : '');
+    const inputBox = useRef(null);
 
-    const [input, setInput] = useState([]);
+    useEffect(() => {
+        // Esto es para que cada vez que se hace un cambio, se haga focus en el inputBox.
+        inputBox.current.focus();
+    }, [])
+    
+
 
     function handleChange(e) {
         setInput(e.target.value);
@@ -19,15 +27,17 @@ function TodoForm({onSubmit}) {
             text: input,
             isComplete: false
         }
-        setInput('');
         onSubmit(newTask);  //onSubmit es: 'handleAddTaskToArray' en caso de agregar. Y 'submitEdit' en caso de editar.
+
+        setInput('');
+        inputBox.current.value = "";
         return;
     };
 
 
     return (
         <form onSubmit={formatTaskAndSubmit}>
-            <input onChange={handleChange} name="newTask" className='todo-input' type="text" placeholder='Add a Task!' />
+            <input onChange={handleChange} ref={inputBox} value={input} name="newTask" className='todo-input' type="text" placeholder='Add a Task!' />
             <button>Add Task!</button>
         </form>
     )

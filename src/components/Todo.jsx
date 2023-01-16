@@ -21,7 +21,7 @@ function Todo({tasks, completeTodo, removeTodo, updateTodo}) {
     }
 
     if (edit.id) {
-        return <TodoForm onSubmit={submitEdit} />
+        return <TodoForm edit={edit} onSubmit={submitEdit} />
     } else {
         return tasks.map((task, i) => {
             return (

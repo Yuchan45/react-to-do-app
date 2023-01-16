@@ -50,7 +50,7 @@ function TodoList() {
     return (
         <>  
             <h1>Todo Form</h1>
-            <TodoForm onSubmit={handleAddTaskToArray} />
+            <TodoForm edit={''} onSubmit={handleAddTaskToArray} />
             <h1>Todo´s</h1>
             <Todo 
                 tasks={tasks}
