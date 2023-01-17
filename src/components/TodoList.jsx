@@ -8,7 +8,7 @@ function TodoList() {
 
     const [tasks, setTasks] = useState([]);
 
-    function handleAddTaskToArray(task) {
+    function addTaskToArray(task) {
         // Recibe un objeto (id y nombre de tarea) y lo agrega al array de tareas.
         if (!task.text || ONLY_WHITE_SPACES.test(task.text)) {
             return;
@@ -18,7 +18,7 @@ function TodoList() {
         return;
     }
 
-    function completeTodo(id) {
+    function completeTask(id) {
         let updatedTasks= tasks.map(task => {
             if (task.id === id) {
                 task.isComplete = !task.isComplete;
@@ -29,13 +29,13 @@ function TodoList() {
     };
 
 
-    function removeTodo(id) {
+    function removeTask(id) {
         const removeArr = tasks.filter(task => task.id !== id);
         setTasks(removeArr);
     };
 
 
-    function updateTodo(oldId, newTask) {
+    function updateTask(oldId, newTask) {
         if (newTask.text === '' || ONLY_WHITE_SPACES.test(newTask.text)) {
             return;
         };
@@ -48,17 +48,18 @@ function TodoList() {
     }
 
     return (
-        <>  
-            <h1>Todo Form</h1>
-            <TodoForm edit={''} onSubmit={handleAddTaskToArray} />
-            <h1>Todo´s</h1>
-            <Todo 
-                tasks={tasks}
-                completeTodo={completeTodo}
-                removeTodo={removeTodo}
-                updateTodo={updateTodo}
-            />
-        </>
+        <div className="todo-container">
+            <h1 className="title">What's the plan for today?</h1>
+            <TodoForm edit={''} onSubmit={addTaskToArray} />
+            <div className="todos-list-container">
+                <Todo 
+                    tasks={tasks}
+                    completeTask={completeTask}
+                    removeTask={removeTask}
+                    updateTask={updateTask}
+                />
+            </div>
+        </div>
     )
 }
 

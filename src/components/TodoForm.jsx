@@ -11,8 +11,6 @@ function TodoForm({ edit, onSubmit }) {
         // Esto es para que cada vez que se hace un cambio, se haga focus en el inputBox.
         inputBox.current.focus();
     }, [])
-    
-
 
     function handleChange(e) {
         setInput(e.target.value);
@@ -37,8 +35,8 @@ function TodoForm({ edit, onSubmit }) {
 
     return (
         <form onSubmit={formatTaskAndSubmit}>
-            <input onChange={handleChange} ref={inputBox} value={input} name="newTask" className='todo-input' type="text" placeholder='Add a Task!' />
-            <button>Add Task!</button>
+            <input onChange={handleChange} ref={inputBox} value={input} name="newTask" className='todo-input' type="text" placeholder='Write here!' autoComplete="off" />
+            <button className='add-task-btn'>Add Task!</button>
         </form>
     )
 }

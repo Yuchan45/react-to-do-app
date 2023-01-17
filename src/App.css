@@ -1,7 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .todo-app {
+  position: absolute;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, rgba(17,36,129,1) 0%, rgba(43,107,203,1) 100%);
+}
+
+.title {
+  color: white;
+  font-size: 1.5rem;
+  padding: 40px 15px 15px;
+}
+
+.todo-container {
+  margin: auto;
+  background-color: #161826;
+  border-radius: 5px;
+  width: 100vw;
+  min-height: 600px;
+  max-width: 750px;
 }
 
 .complete {
   text-decoration: line-through;
+  color: #ff0000;
+}
+
+.todo-input {
+  font-size: 1rem;
+  padding: 8px 10px;
+  border: 2px solid slateblue;
+  border-radius: 5px 0 0 5px;
+  width: 50vw;
+  min-width: 180px;
+  max-width: 300px;
+}
+
+.todo-input:focus {
+  outline: none !important;
+  border: 2px solid rgb(0, 124, 118);
+  box-shadow: 0 0 10px #719ECE;
+}
+
+.add-task-btn {
+  font-size: 1rem;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 0 5px 5px 0;
+  background: linear-gradient(45deg, slateblue, #505fff) border-box;
+  transition: all .3s ease-out;
+}
+
+.add-task-btn:hover {
+  color: #fff;
+}
+
+.todos-list-container {
+  width: 90vw;
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-row {
+  width: 100%;
+  max-width: 500px;
+  margin: 1px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgb(0 143 129) 0%, rgb(19 45 84) 100%);
+}
+
+.todo-row > div {
+  cursor: pointer;
+  text-transform: capitalize;
+  color: white;
+  font-size: 20px;
+}
+
+.icons {
+  display: flex;
+  gap: 5px;
+}
+
+.icons svg {
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.icons svg:first-child {
+  color: #e85858;
+}
+
+.icons svg:first-child:hover {
+  color: #e43232;
+}
+
+.icons svg:last-child {
+  color: #87b9ff;
+}
+
+.icons svg:last-child:hover {
+  color: #3d8dfc;
+}
+
+@media only screen and (min-width: 768px) {
+  .todo-container {
+    margin: 100px auto;
+    border-radius: 20px;
+  }
+
+  .todo-row {
+    margin: 2px auto;
+  }
+  
 }
