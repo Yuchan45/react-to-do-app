@@ -34,7 +34,7 @@ function TodoForm({ edit, onSubmit }) {
 
 
     return (
-        <form onSubmit={formatTaskAndSubmit}>
+        <form onSubmit={formatTaskAndSubmit} className="input-task-form">
             <input onChange={handleChange} ref={inputBox} value={input} name="newTask" className='todo-input' type="text" placeholder='Write here!' autoComplete="off" />
             <button className='add-task-btn'>Add Task!</button>
         </form>

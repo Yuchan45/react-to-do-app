@@ -11,7 +11,6 @@
   position: absolute;
   text-align: center;
   width: 100vw;
-  height: 100vh;
   background: linear-gradient(45deg, rgba(17,36,129,1) 0%, rgba(43,107,203,1) 100%);
 }
 
@@ -28,6 +27,7 @@
   width: 100vw;
   min-height: 600px;
   max-width: 750px;
+  padding: 25px 0;
 }
 
 .complete {
@@ -35,20 +35,30 @@
   color: #ff0000;
 }
 
+.input-task-form {
+  margin-top: 20px;
+}
+
 .todo-input {
   font-size: 1rem;
-  padding: 8px 10px;
+  padding: 8px 15px;
   border: 2px solid slateblue;
   border-radius: 5px 0 0 5px;
   width: 50vw;
   min-width: 180px;
   max-width: 300px;
+  background-color: transparent;
+  color: white;
 }
 
 .todo-input:focus {
   outline: none !important;
   border: 2px solid rgb(0, 124, 118);
   box-shadow: 0 0 10px #719ECE;
+}
+
+.todo-input::placeholder {
+  color: rgb(202, 202, 202);
 }
 
 .add-task-btn {
