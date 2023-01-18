@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
+import TodoHeader from './TodoHeader';
 
 const ONLY_WHITE_SPACES = /^\s*$/;
 
@@ -49,7 +50,7 @@ function TodoList() {
 
     return (
         <div className="todo-container">
-            <h1 className="title">What's the plan for today?</h1>
+            <TodoHeader />
             <TodoForm edit={''} onSubmit={addTaskToArray} />
             <div className="todos-list-container">
                 <Todo 

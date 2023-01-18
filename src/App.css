@@ -11,13 +11,24 @@
   position: absolute;
   text-align: center;
   width: 100vw;
+  min-height: 100vh;
   background: linear-gradient(45deg, rgba(17,36,129,1) 0%, rgba(43,107,203,1) 100%);
+}
+
+.header-title {
+  display: flex;
+  width: 90%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto 15px auto;
+  gap: 15px;
 }
 
 .title {
   color: white;
   font-size: 1.5rem;
-  padding: 40px 15px 15px;
+
 }
 
 .todo-container {
@@ -131,6 +142,18 @@
 
 .icons svg:last-child:hover {
   color: #3d8dfc;
+}
+
+.edit-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #00ca0f;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.edit-icon:hover {
+  color: #03fc14;
 }
 
 @media only screen and (min-width: 768px) {
