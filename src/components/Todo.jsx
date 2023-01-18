@@ -18,7 +18,7 @@ function Todo({tasks, completeTask, removeTask, updateTask}) {
             value: '',
             isComplete: false
         });
-    }
+    };
 
     if (edit.id) {
         return <TodoForm edit={edit} onSubmit={submitEdit} />
@@ -41,4 +41,4 @@ function Todo({tasks, completeTask, removeTask, updateTask}) {
 
 }
 
-export default Todo
+export default Todo;

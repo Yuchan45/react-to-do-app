@@ -156,6 +156,32 @@
   color: #03fc14;
 }
 
+.title-edit-form {
+  display: flex;
+  width: 90%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto 15px auto;
+  gap: 15px;
+}
+
+.title-edit-form input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 2px 8px;
+}
+
+.title-edit-form input:focus {
+  outline: none !important;
+  border: 2px solid rgb(0, 124, 118);
+  box-shadow: 0 0 10px #719ece;
+}
+
+
+
 @media only screen and (min-width: 768px) {
   .todo-container {
     margin: 100px auto;

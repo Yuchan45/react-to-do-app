@@ -5,23 +5,27 @@ import TodoHeaderEdit from './TodoHeaderEdit';
 
 function TodoHeader() {
 
-    const [editTitle, setEditTitle] = useState('');
+    const [title, setTitle] = useState("What's the plan for today?");
+    const [flag, setFlag] = useState(false);
+
+    function editTitle(newTitle) {
+        setTitle(newTitle);
+        setFlag(!flag);
+        return;
+    };
 
 
-
-
-
-    if (editTitle != '') {
-        return <h1 className="title">Edit Title!</h1>;
+    if (flag) {
+        return <TodoHeaderEdit title={title} onSubmit={editTitle} />
     } else {
         return(
             <div className="header-title">
-                <h1 className="title">Edit Title!</h1>
-                
-                <TiPen className="edit-icon"/>
+                <h1 className="title" onClick={() => { setFlag(!flag); }} >{title}</h1>
+                <TiPen className="edit-icon" onClick={() => { setFlag(!flag); }} />
             </div>
         );
     }
+
 }
 
-export default TodoHeader
+export default TodoHeader;

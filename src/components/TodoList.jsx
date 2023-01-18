@@ -17,7 +17,7 @@ function TodoList() {
 
         setTasks([...tasks, task]);
         return;
-    }
+    };
 
     function completeTask(id) {
         let updatedTasks= tasks.map(task => {
