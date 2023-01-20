@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
 import TodoHeader from './TodoHeader';
+import TodoFooter from './TodoFooter';
 
 const ONLY_WHITE_SPACES = /^\s*$/;
 
@@ -48,6 +49,15 @@ function TodoList() {
         return;
     }
 
+    function clearAll() {
+        console.log("Clear all");
+        setTasks([]);
+
+
+
+
+    }
+
     return (
         <div className="todo-container">
             <TodoHeader />
@@ -59,6 +69,9 @@ function TodoList() {
                     removeTask={removeTask}
                     updateTask={updateTask}
                 />
+                { tasks.length > 0 &&
+                    <TodoFooter onClick={clearAll} />
+                }
             </div>
         </div>
     )

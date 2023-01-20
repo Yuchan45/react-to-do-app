@@ -180,6 +180,32 @@
   box-shadow: 0 0 10px #719ece;
 }
 
+.footer-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #20212e;
+  transition: all .3s ease;
+  margin: 15px auto;
+}
+
+.footer-container:hover {
+  width: 100%;
+  background-color:#e85858;
+}
+
+
+.footer-container > h3 {
+  padding: 8px 10px;
+  color: #979797;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.footer-container > h3:hover {
+  color: #fff;
+}
+
+
 
 
 @media only screen and (min-width: 768px) {
