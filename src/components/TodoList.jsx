@@ -49,14 +49,6 @@ function TodoList() {
         return;
     }
 
-    function clearAll() {
-        console.log("Clear all");
-        setTasks([]);
-
-
-
-
-    }
 
     return (
         <div className="todo-container">
@@ -70,7 +62,7 @@ function TodoList() {
                     updateTask={updateTask}
                 />
                 { tasks.length > 0 &&
-                    <TodoFooter onClick={clearAll} />
+                    <TodoFooter onClick={() => { setTasks([]) }} />
                 }
             </div>
         </div>
